@@ -33,13 +33,13 @@
     methods: {
       ...mapActions(["getTopNews"]),
       async fetchTopNews() {
-        let countriesLength = this.countries.length;
-        let countryIndex = Math.floor(
-          Math.random() * (countriesLength - 1) + 1
-        );
-        this.countryInfo = this.countries[countryIndex];
+        // let countriesLength = this.countries.length;
+        // let countryIndex = Math.floor(
+        //   Math.random() * (countriesLength - 1) + 1
+        // );
+        this.countryInfo = this.countries[0];
         let { data } = await this.getTopNews(
-          this.countries[countryIndex].value
+          this.countries[0].value
         );
         this.articles = data.articles;
       },

@@ -4,30 +4,11 @@ import axios from "../plugins/axios";
 Vue.use(Vuex);
 const store = new Vuex.Store({
     state: {
-        countries: [{
+        countries: [
+            {
                 name: "United States of America",
                 value: "us",
-            },
-            {
-                name: "Nigeria",
-                value: "ng",
-            },
-            {
-                name: "Argentina",
-                value: "ar",
-            },
-            {
-                name: "Canada",
-                value: "ca",
-            },
-            {
-                name: "South Africa",
-                value: "za",
-            },
-            {
-                name: "Japan",
-                value: "ja",
-            },
+            }
         ],
         categories: [
             "entertainment",
