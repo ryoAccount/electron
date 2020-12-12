@@ -13,7 +13,7 @@
 </template>
 <script>
   import { mapActions, mapState } from "vuex";
-  import NewsCard from "../components/NewsCard";
+  import NewsCard from "../components/NewsCard.vue";
   export default {
     data() {
       return {
