@@ -20,12 +20,12 @@
         min-height: 100vh;
     }
     #app {
-        font-family: "Abel", sans-serif;
+        font-family: "Abel", sans-serif, monospace;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
-        color: #2c3e50;
-        background-color: #fff;
+        color: #dfefff;
+        background-color: #131415;
     }
     #app h1 {
         font-family: "Staatliches", cursive;

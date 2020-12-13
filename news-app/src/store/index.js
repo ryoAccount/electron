@@ -6,9 +6,13 @@ const store = new Vuex.Store({
     state: {
         countries: [
             {
+                name: "Japan",
+                value: "jp",
+            },
+            {
                 name: "United States of America",
                 value: "us",
-            }
+            },
         ],
         categories: [
             "entertainment",

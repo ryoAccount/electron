@@ -4,17 +4,17 @@
             <div class="logo__container">
                 <img src="../assets/icon.png" alt="News app logo" class="logo__image" />
             </div>
-            <h1>News App</h1>
+            <h1>News</h1>
         </div>
         <nav class="nav">
             <h4 class="nav__link">
                 <router-link to="/home">Home</router-link>
             </h4>
             <h4 class="nav__link">
-                <router-link to="/top-news">Top News</router-link>
+                <router-link to="/top-news">Oversea</router-link>
             </h4>
             <h4 class="nav__link">
-                <router-link to="/categories">News By Category</router-link>
+                <router-link to="/categories">Category</router-link>
             </h4>
         </nav>
     </header>
@@ -29,6 +29,7 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        width: 95%;
     }
     .logo {
         display: flex;

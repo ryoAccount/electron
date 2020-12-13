@@ -75,11 +75,11 @@
     flex-direction: row;
     align-items: flex-start;
     max-width: 550px;
-    box-shadow: 2px 1px 7px 1px #eee;
     padding: 20px 5px;
     box-sizing: border-box;
     margin: 15px 5px;
     border-radius: 4px;
+    border: white 1px solid;
   }
   .news__section {
     width: 100%;
@@ -109,10 +109,6 @@
       max-height 300ms cubic-bezier(0.4, 0, 1, 1);
     max-width: 150px;
     max-height: 150px;
-  }
-  .news__img:hover {
-    max-width: 180px;
-    max-height: 180px;
   }
   .article__link {
     text-decoration: none;

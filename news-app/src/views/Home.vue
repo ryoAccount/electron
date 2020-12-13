@@ -1,7 +1,6 @@
 <template>
   <section class="home">
     <h1>Welcome to News App</h1>
-    <h4>Displaying Top News from {{ countryInfo.name }}</h4>
     <div class="articles__div" v-if="articles">
       <news-card
         v-for="(article, index) in articles"
@@ -17,8 +16,7 @@
   export default {
     data() {
       return {
-        articles: "",
-        countryInfo: "",
+        articles: ""
       };
     },
     components: {
@@ -37,7 +35,6 @@
         // let countryIndex = Math.floor(
         //   Math.random() * (countriesLength - 1) + 1
         // );
-        this.countryInfo = this.countries[0];
         let { data } = await this.getTopNews(
           this.countries[0].value
         );
