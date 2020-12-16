@@ -4,7 +4,6 @@
             <div class="logo__container">
                 <img src="../assets/icon.png" alt="News app logo" class="logo__image" />
             </div>
-            <h1>News</h1>
         </div>
         <nav class="nav">
             <h4 class="nav__link">
@@ -43,6 +42,8 @@
         height: 50px;
     }
     .logo__image {
+        margin-left: 15px;
+        margin-top: 10px;
         max-width: 100%;
         max-height: 100%;
     }

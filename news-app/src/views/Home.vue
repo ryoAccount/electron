@@ -1,6 +1,6 @@
 <template>
   <section class="home">
-    <h1>Welcome to News App</h1>
+    <h1>Recent Top News {{totalResults}}</h1>
     <div class="articles__div" v-if="articles">
       <news-card
         v-for="(article, index) in articles"
@@ -16,7 +16,8 @@
   export default {
     data() {
       return {
-        articles: ""
+        articles: "",
+        totalResults: 0
       };
     },
     components: {
@@ -39,6 +40,7 @@
           this.countries[0].value
         );
         this.articles = data.articles;
+        this.totalResults = data.totalResults;
       },
     },
   };

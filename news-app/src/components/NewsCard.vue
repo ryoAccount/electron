@@ -1,14 +1,14 @@
 <template>
   <section class="news">
     <div class="news__section">
-      <h1 class="news__title">
-        <a class="article__link" :href="article.url" target="_blank">
+      <h1 class="news__author" v-if="article.author">[ {{ article.author }} ]</h1>
+      <h3 class="news__title">
+        <a class="article__link" :href="article.url" target="_blank" rel="noopener">
           {{ article.title }}
         </a>
-      </h1>
-      <h3 class="news__author" v-if="article.author">{{ article.author }}</h3>
+      </h3>
       <!-- <p class="article__paragraph">{{ article.description }}</p> -->
-      <h5 class="article__published">{{ new Date(article.publishedAt) }}</h5>
+      <h5 class="article__published">{{ getDateJP(article.publishedAt) }}</h5>
     </div>
     <div class="image__container">
       <img
@@ -65,6 +65,16 @@
           observer.observe(img);
         });
       },
+      getDateJP(publishedAt) {
+        const publishedAtDate = new Date(publishedAt);
+        const year = publishedAtDate.getFullYear();
+        const month = publishedAtDate.getMonth()+1;
+        const date = publishedAtDate.getDate();
+        const hours = publishedAtDate.getHours() < 10 ? "0" + publishedAtDate.getHours() : publishedAtDate.getHours();
+        const minutes = publishedAtDate.getMinutes() < 10 ? "0" + publishedAtDate.getMinutes() : publishedAtDate.getMinutes();
+        const day = ['日','月','火','水','木','金','土'][publishedAtDate.getDay()];
+        return year + '/' + month + '/' + date + '（' + day + '）' + ' ' + hours + ':' + minutes;
+      }
     },
   };
 </script>
@@ -95,6 +105,7 @@
     font-size: 14px;
     text-align: left;
     font-weight: normal;
+    margin-top: 0;
   }
   .article__published {
     text-align: left;

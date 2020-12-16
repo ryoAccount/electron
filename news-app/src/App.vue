@@ -14,13 +14,12 @@
     };
 </script>
 <style>
-    @import url("https://fonts.googleapis.com/css2?family=Abel&family=Staatliches&display=swap");
     html,
     #app {
         min-height: 100vh;
     }
     #app {
-        font-family: "Abel", sans-serif, monospace;
+        font-family: sans-serif, monospace;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
@@ -28,7 +27,7 @@
         background-color: #131415;
     }
     #app h1 {
-        font-family: "Staatliches", cursive;
+        font-family: sans-serif, cursive;
     }
     a {
         font-weight: bold;
