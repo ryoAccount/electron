@@ -11,7 +11,7 @@
   </section>
 </template>
 <script>
-  import { mapActions, mapState } from "vuex";
+  import { mapActions } from "vuex";
   import NewsCard from "../components/NewsCard.vue";
   export default {
     data() {
@@ -26,19 +26,10 @@
     mounted() {
       this.fetchTopNews();
     },
-    computed: {
-      ...mapState(["countries"]),
-    },
     methods: {
       ...mapActions(["getTopNews"]),
       async fetchTopNews() {
-        // let countriesLength = this.countries.length;
-        // let countryIndex = Math.floor(
-        //   Math.random() * (countriesLength - 1) + 1
-        // );
-        let { data } = await this.getTopNews(
-          this.countries[0].value
-        );
+        let { data } = await this.getTopNews("jp");
         this.articles = data.articles;
         this.totalResults = data.totalResults;
       },

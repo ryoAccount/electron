@@ -6,13 +6,33 @@ const store = new Vuex.Store({
     state: {
         countries: [
             {
-                name: "Japan",
-                value: "jp",
+                name: "United States of America",
+                value: "us"
             },
             {
-                name: "United States of America",
-                value: "us",
+                name: "Canada",
+                value: "ca"
             },
+            {
+                name: "Italy",
+                value: "it"
+            },
+            {
+                name: "Russian Federation",
+                value: "ru"
+            },
+            {
+                name: "China",
+                value: "cn"
+            },
+            {
+                name: "India",
+                value: "in"
+            },
+            {
+                name: "Brazil",
+                value: "br"
+            }
         ],
         categories: [
             "entertainment",

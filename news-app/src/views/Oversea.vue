@@ -1,7 +1,6 @@
 <template>
 	<section class="top-news">
 		<div class="country-selector__div">
-			<h4>Select a country of your choice</h4>
 			<select
 				name="country"
 				class="country__selector"
@@ -25,20 +24,21 @@
 			></news-card>
 		</div>
 		<div v-else class="news--empty">
-			<p>Loading...</p>
+			<p>{{statusMsg}}</p>
 		</div>
 	</section>
 </template>
 
 <script>
 	import NewsCard from "@/components/NewsCard";
-	import { mapActions, mapState, mapMutations } from "vuex";
+	import { mapActions, mapState } from "vuex";
 	export default {
 		name: "top-news",
 		data() {
 			return {
 				country: "",
 				articles: null,
+				statusMsg: "Select a country"
 			};
 		},
 		components: {
@@ -47,9 +47,6 @@
 		computed: {
 			...mapState(["countries", "countryIndex"]),
 		},
-		created() {
-			this.getRandomCounty();
-		},
 		mounted() {
 			this.country = this.countries[this.countryIndex];
 		},
@@ -57,10 +54,10 @@
 			country: "fetchTopNews",
 		},
 		methods: {
-			...mapMutations(["getRandomCounty"]),
 			...mapActions(["getTopNews"]),
 			async fetchTopNews() {
 				this.articles = null;
+				if (this.country.value !== "") this.statusMsg = "Loading...";
 				let country = this.country.value;
 				let { data } = await this.getTopNews(country);
 				this.articles = data.articles;
@@ -75,7 +72,10 @@
 		margin: 30px 0;
 	}
 	.country__selector {
+		color: #dfefff;
 		height: 30px;
+		background-color: #131415;
+		border-radius: 4px;
 		width: auto;
 	}
 </style>

@@ -10,7 +10,7 @@
                 <router-link to="/home">Home</router-link>
             </h4>
             <h4 class="nav__link">
-                <router-link to="/top-news">Oversea</router-link>
+                <router-link to="/oversea">Oversea</router-link>
             </h4>
             <h4 class="nav__link">
                 <router-link to="/categories">Category</router-link>
