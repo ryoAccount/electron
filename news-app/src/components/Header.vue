@@ -1,27 +1,37 @@
 <template>
-    <header class="header">
-        <div class="logo">
-            <div class="logo__container">
-                <img src="../assets/icon.png" alt="News app logo" class="logo__image" />
-            </div>
-        </div>
-        <nav class="nav">
-            <h4 class="nav__link">
-                <router-link to="/home">Home</router-link>
-            </h4>
-            <h4 class="nav__link">
-                <router-link to="/oversea">Oversea</router-link>
-            </h4>
-            <h4 class="nav__link">
-                <router-link to="/categories">Category</router-link>
-            </h4>
-        </nav>
-    </header>
+  <header class="header">
+    <div class="logo">
+      <div class="logo__container">
+        <img
+          src="../assets/icon.png"
+          alt="News app logo"
+          class="logo__image"
+        >
+      </div>
+    </div>
+    <nav class="nav">
+      <h4 class="nav__link">
+        <router-link to="/home">
+          Home
+        </router-link>
+      </h4>
+      <h4 class="nav__link">
+        <router-link to="/oversea">
+          Oversea
+        </router-link>
+      </h4>
+      <h4 class="nav__link">
+        <router-link to="/categories">
+          Category
+        </router-link>
+      </h4>
+    </nav>
+  </header>
 </template>
 <script>
-    export default {
-        name: "app-header",
-    };
+export default {
+    name: "AppHeader",
+};
 </script>
 <style>
     .header {

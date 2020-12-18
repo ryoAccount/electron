@@ -1,17 +1,17 @@
 <template>
-    <div id="app">
-        <app-header />
-        <router-view />
-    </div>
+  <div id="app">
+    <app-header />
+    <router-view />
+  </div>
 </template>
 <script>
-    import appHeader from "@/components/Header.vue";
-    export default {
-        name: "layout",
-        components: {
-            appHeader,
-        },
-    };
+import appHeader from "@/components/Header.vue";
+export default {
+    name: "Layout",
+    components: {
+        appHeader,
+    },
+};
 </script>
 <style>
     html,

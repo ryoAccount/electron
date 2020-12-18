@@ -1,0 +1,32 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:vue/recommended"
+    ],
+    "globals": {
+        "module": false,
+        "process": false,
+        "require": false,
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "vue"
+    ],
+    "rules": {
+        "no-extra-semi": "warn",
+        "no-undef": "warn",
+        "indent": ["error", 4],
+        "semi": "error",
+        "space-before-blocks": ["warn", { "functions": "always", "keywords": "always" }],
+        "quotes": ["warn", "double"] 
+    }
+}

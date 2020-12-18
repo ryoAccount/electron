@@ -1,40 +1,43 @@
 <template>
   <section class="home">
-    <h1>Recent Top News {{totalResults}}</h1>
-    <div class="articles__div" v-if="articles">
+    <h1>Recent Top News {{ totalResults }}</h1>
+    <div
+      v-if="articles"
+      class="articles__div"
+    >
       <news-card
         v-for="(article, index) in articles"
         :key="index"
         :article="article"
-      ></news-card>
+      />
     </div>
   </section>
 </template>
 <script>
-  import { mapActions } from "vuex";
-  import NewsCard from "../components/NewsCard.vue";
-  export default {
-    data() {
-      return {
-        articles: "",
-        totalResults: 0
-      };
-    },
+import { mapActions } from "vuex";
+import NewsCard from "../components/NewsCard.vue";
+export default {
     components: {
-      NewsCard,
+        NewsCard,
+    },
+    data() {
+        return {
+            articles: "",
+            totalResults: 0
+        };
     },
     mounted() {
-      this.fetchTopNews();
+        this.fetchTopNews();
     },
     methods: {
-      ...mapActions(["getTopNews"]),
-      async fetchTopNews() {
-        let { data } = await this.getTopNews("jp");
-        this.articles = data.articles;
-        this.totalResults = data.totalResults;
-      },
+        ...mapActions(["getTopNews"]),
+        async fetchTopNews() {
+            let { data } = await this.getTopNews("jp");
+            this.articles = data.articles;
+            this.totalResults = data.totalResults;
+        },
     },
-  };
+};
 </script>
 <style>
   .articles__div {

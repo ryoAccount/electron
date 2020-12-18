@@ -7,25 +7,25 @@ import CategoryNews from "../views/CategoryNews.vue";
 Vue.use(VueRouter);
 
 const routes = [{
-        path: "/",
-        name: "Home",
-        component: Home,
-    },
-    {
-        path: "/home",
-        name: "landing",
-        component: Home,
-    },
-    {
-        path: "/oversea",
-        name: "oversea",
-        component: Oversea,
-    },
-    {
-        path: "/news-by-category",
-        name: "News by category",
-        component: CategoryNews,
-    },
+    path: "/",
+    name: "Home",
+    component: Home,
+},
+{
+    path: "/home",
+    name: "landing",
+    component: Home,
+},
+{
+    path: "/oversea",
+    name: "oversea",
+    component: Oversea,
+},
+{
+    path: "/news-by-category",
+    name: "News by category",
+    component: CategoryNews,
+},
     //   {
     //     path: '/about',
     //     name: 'About',
@@ -42,9 +42,9 @@ const router = new VueRouter({
     routes,
     scrollBehavior(to, from, savedPosition) {
         if (savedPosition) {
-            return savedPosition
+            return savedPosition;
         } else {
-            return { x: 0, y: 0 }
+            return { x: 0, y: 0 };
         }
     }
 });

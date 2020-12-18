@@ -1,14 +1,26 @@
 <template>
   <section class="news">
     <div class="news__section">
-      <h1 class="news__author" v-if="article.author">[ {{ article.author }} ]</h1>
+      <h1
+        v-if="article.author"
+        class="news__author"
+      >
+        [ {{ article.author }} ]
+      </h1>
       <h3 class="news__title">
-        <a class="article__link" :href="article.url" target="_blank" rel="noopener">
+        <a
+          class="article__link"
+          :href="article.url"
+          target="_blank"
+          rel="noopener"
+        >
           {{ article.title }}
         </a>
       </h3>
       <!-- <p class="article__paragraph">{{ article.description }}</p> -->
-      <h5 class="article__published">{{ getDateJP(article.publishedAt) }}</h5>
+      <h5 class="article__published">
+        {{ getDateJP(article.publishedAt) }}
+      </h5>
     </div>
     <div class="image__container">
       <img
@@ -16,67 +28,67 @@
         src="../assets/icon.png"
         :data-src="article.urlToImage"
         :alt="article.title"
-      />
+      >
     </div>
   </section>
 </template>
 <script>
-  export default {
-    name: "news-card",
+export default {
+    name: "NewsCard",
     props: {
-      article: Object,
+        article: Object,
     },
     mounted() {
-      this.lazyLoadImages();
+        this.lazyLoadImages();
     },
     methods: {
-      lazyLoadImages() {
-        const images = document.querySelectorAll(".news__img");
-        const options = {
-          // If the image gets within 50px in the Y axis, start the download.
-          root: null, // Page as root
-          rootMargin: "0px",
-          threshold: 0.1,
-        };
-        const fetchImage = (url) => {
-          return new Promise((resolve, reject) => {
-            const image = new Image();
-            image.src = url;
-            image.onload = resolve;
-            image.onerror = reject;
-          });
-        };
-        const loadImage = (image) => {
-          const src = image.dataset.src;
-          fetchImage(src).then(() => {
-            image.src = src;
-          });
-        };
-        const handleIntersection = (entries) => {
-          entries.forEach((entry) => {
-            if (entry.intersectionRatio > 0) {
-              loadImage(entry.target);
-            }
-          });
-        };
-        // The observer for the images on the page
-        const observer = new IntersectionObserver(handleIntersection, options);
-        images.forEach((img) => {
-          observer.observe(img);
-        });
-      },
-      getDateJP(publishedAt) {
-        const publishedAtDate = new Date(publishedAt);
-        const year = publishedAtDate.getFullYear();
-        const month = publishedAtDate.getMonth()+1;
-        const date = publishedAtDate.getDate();
-        const hours = publishedAtDate.getHours() < 10 ? "0" + publishedAtDate.getHours() : publishedAtDate.getHours();
-        const minutes = publishedAtDate.getMinutes() < 10 ? "0" + publishedAtDate.getMinutes() : publishedAtDate.getMinutes();
-        const day = ['日','月','火','水','木','金','土'][publishedAtDate.getDay()];
-        return year + '/' + month + '/' + date + '（' + day + '）' + ' ' + hours + ':' + minutes;
-      }
+        lazyLoadImages() {
+            const images = document.querySelectorAll(".news__img");
+            const options = {
+                // If the image gets within 50px in the Y axis, start the download.
+                root: null, // Page as root
+                rootMargin: "0px",
+                threshold: 0.1,
+            };
+            const fetchImage = (url) => {
+                return new Promise((resolve, reject) => {
+                    const image = new Image();
+                    image.src = url;
+                    image.onload = resolve;
+                    image.onerror = reject;
+                });
+            };
+            const loadImage = (image) => {
+                const src = image.dataset.src;
+                fetchImage(src).then(() => {
+                    image.src = src;
+                });
+            };
+            const handleIntersection = (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.intersectionRatio > 0) {
+                        loadImage(entry.target);
+                    }
+                });
+            };
+            // The observer for the images on the page
+            const observer = new IntersectionObserver(handleIntersection, options);
+            images.forEach((img) => {
+                observer.observe(img);
+            });
+        },
+        getDateJP(publishedAt) {
+            const publishedAtDate = new Date(publishedAt);
+            const year = publishedAtDate.getFullYear();
+            const month = publishedAtDate.getMonth()+1;
+            const date = publishedAtDate.getDate();
+            const hours = publishedAtDate.getHours() < 10 ? "0" + publishedAtDate.getHours() : publishedAtDate.getHours();
+            const minutes = publishedAtDate.getMinutes() < 10 ? "0" + publishedAtDate.getMinutes() : publishedAtDate.getMinutes();
+            const day = ["日","月","火","水","木","金","土"][publishedAtDate.getDay()];
+            return year + "/" + month + "/" + date + "（" + day + "）" + " " + hours + ":" + minutes;
+        }
     },
-  };
+};
 </script>
 <style>
   .news {
