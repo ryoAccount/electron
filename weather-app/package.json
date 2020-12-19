@@ -5,9 +5,11 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "lint-fix": "eslint --ext .js,.vue . --fix"
   },
   "dependencies": {
+    "axios": "^0.21.0",
     "core-js": "^3.6.5",
     "vue": "^2.6.11"
   },
@@ -27,19 +29,36 @@
       "node": true
     },
     "extends": [
-      "plugin:vue/essential",
+      "plugin:vue/recommended",
       "eslint:recommended"
     ],
-    "parserOptions": {
+    "globals": {
+      "module": false,
+      "process": false,
+      "require": false
+  },
+  "parserOptions": {
       "parser": "babel-eslint"
     },
     "rules": {
       "no-extra-semi": "warn",
       "no-undef": "warn",
-      "indent": ["error", 2],
+      "indent": [
+        "error",
+        4
+      ],
       "semi": "error",
-      "space-before-blocks": ["warn", { "functions": "always", "keywords": "always" }],
-      "quotes": ["warn", "double"] 
+      "space-before-blocks": [
+        "warn",
+        {
+          "functions": "always",
+          "keywords": "always"
+        }
+      ],
+      "quotes": [
+        "warn",
+        "double"
+      ]
     }
   },
   "browserslist": [
