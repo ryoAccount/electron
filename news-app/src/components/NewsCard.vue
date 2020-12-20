@@ -17,10 +17,11 @@
           {{ article.title }}
         </a>
       </h3>
+      <!-- 文字化けしているNewsがあるので使わない -->
       <!-- <p class="article__paragraph">{{ article.description }}</p> -->
-      <h5 class="article__published">
+      <div class="article__published">
         {{ getDateJP(article.publishedAt) }}
-      </h5>
+      </div>
     </div>
     <div class="image__container">
       <img
@@ -85,7 +86,7 @@ export default {
             const hours = publishedAtDate.getHours() < 10 ? "0" + publishedAtDate.getHours() : publishedAtDate.getHours();
             const minutes = publishedAtDate.getMinutes() < 10 ? "0" + publishedAtDate.getMinutes() : publishedAtDate.getMinutes();
             const day = ["日","月","火","水","木","金","土"][publishedAtDate.getDay()];
-            return year + "/" + month + "/" + date + "（" + day + "）" + " " + hours + ":" + minutes;
+            return year + "/" + month + "/" + date + "(" + day + ")" + " " + hours + ":" + minutes;
         }
     },
 };
@@ -109,17 +110,22 @@ export default {
     margin-right: 5px;
   }
   .news__title {
-    font-size: 15px;
+    font-size: 14px;
     text-align: left;
     margin-top: 0;
   }
   .news__author {
-    font-size: 14px;
+    font-size: 13px;
     text-align: left;
     font-weight: normal;
     margin-top: 0;
   }
   .article__published {
+    font-size: 12px;
+    text-align: left;
+  }
+  .article__paragraph {
+    font-size: 11px;
     text-align: left;
   }
   .image__container {

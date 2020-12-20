@@ -34,15 +34,6 @@ const store = new Vuex.Store({
                 value: "br"
             }
         ],
-        categories: [
-            "entertainment",
-            "general",
-            "health",
-            "science",
-            "business",
-            "sports",
-            "technology",
-        ],
     },
     mutations: {},
     actions: {
