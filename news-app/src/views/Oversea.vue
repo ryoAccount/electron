@@ -54,19 +54,17 @@ export default {
         };
     },
     computed: {
-        ...mapState(["countries", "countryIndex"]),
+        ...mapState(["countries"]),
     },
     watch: {
         country: "fetchTopNews",
-    },
-    mounted() {
-        this.country = this.countries[this.countryIndex];
     },
     methods: {
         ...mapActions(["getTopNews"]),
         async fetchTopNews() {
             this.articles = null;
-            if (this.country.value !== "") this.statusMsg = "Loading...";
+            if (this.country == "" || this.country.value === undefined) return;
+            this.statusMsg = "Loading...";
             let country = this.country.value;
             let { data } = await this.getTopNews(country);
             this.articles = data.articles;

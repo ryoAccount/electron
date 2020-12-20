@@ -2,7 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Oversea from "../views/Oversea.vue";
-import CategoryNews from "../views/CategoryNews.vue";
+import BbcNews from "../views/BbcNews.vue";
 
 Vue.use(VueRouter);
 
@@ -22,9 +22,9 @@ const routes = [{
     component: Oversea,
 },
 {
-    path: "/news-by-category",
-    name: "News by category",
-    component: CategoryNews,
+    path: "/bbc",
+    name: "BBC News",
+    component: BbcNews,
 },
     //   {
     //     path: '/about',

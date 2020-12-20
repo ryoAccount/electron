@@ -21,8 +21,8 @@
         </router-link>
       </h4>
       <h4 class="nav__link">
-        <router-link to="/categories">
-          Category
+        <router-link to="/bbc">
+          BBC News
         </router-link>
       </h4>
     </nav>

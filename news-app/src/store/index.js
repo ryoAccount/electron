@@ -53,6 +53,13 @@ const store = new Vuex.Store({
             });
             return res;
         },
+        async getBbcNews() {
+            let res = await axios({
+                url: "/top-headlines?sources=bbc-news",
+                method: "GET",
+            });
+            return res;
+        },
     },
 });
 export default store;
