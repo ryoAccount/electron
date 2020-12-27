@@ -11,7 +11,7 @@ const routes = [{
 },
 {
     path: "/home",
-    name: "Weather App",
+    name: "Weather-App",
     component: Home,
 }];
 

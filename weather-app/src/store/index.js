@@ -19,7 +19,7 @@ const store = new Vuex.Store({
     },
     mutations: {},
     actions: {
-        async getWeather(context, lat, long) {
+        async getWeather(context, {lat, long}) {
             let res = await axios({
                 url: `${lat},${long}`,
                 method: "GET",
