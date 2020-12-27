@@ -1,7 +1,7 @@
 <template>
-  <section class="home">
-    <div>{{ weatherData }}</div>
-  </section>
+    <section class="home">
+        <div>{{ weatherData }}</div>
+    </section>
 </template>
 <script>
 import { mapActions } from "vuex";
@@ -25,4 +25,7 @@ export default {
 };
 </script>
 <style>
+.home {
+    color: white;
+}
 </style>
